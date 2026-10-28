@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Repara PRO | Assistência técnica de celulares em Umuarama</title>
+<meta name="description" content="Microrreparo em placa, troca de tela, vidro traseiro e bateria. Laboratório de reparo de smartphones em Umuarama-PR, com busca e entrega do aparelho.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/video/poster.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobilePhoneStore","name":"Repara PRO Assistência Técnica","description":"Assistência técnica de celulares: microrreparo em placa, tela, vidro traseiro e bateria.","address":{"@type":"PostalAddress","addressLocality":"Umuarama","addressRegion":"PR","addressCountry":"BR"},"sameAs":["https://www.instagram.com/reparaproassistencia/"]}
+</script>
+<style>
+:root{
+  --bg:#000;--ink:#f4f4f2;--mute:#8d8d8a;--dim:#4a4a48;--line:rgba(255,255,255,.12);--panel:#0a0a0a;
+  --wide:"Archivo",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+  --gut:clamp(16px,4vw,56px);--ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto}
+body{background:var(--bg);color:var(--ink);font-family:var(--wide);font-variation-settings:"wdth" 100;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.loading{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+::selection{background:#fff;color:#000}
+
+/* grão de filme */
+.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}60%{transform:translate(-6%,2%)}80%{transform:translate(5%,6%)}100%{transform:translate(0,0)}}
+
+/* preloader */
+.pre{position:fixed;inset:0;z-index:100;display:grid;place-items:center;pointer-events:none}
+.pre::before,.pre::after{content:"";position:absolute;left:0;right:0;height:50.5%;background:#000;transition:transform 1.1s var(--ease)}
+.pre::before{top:0}.pre::after{bottom:0}
+.pre.done::before{transform:translateY(-100%)}.pre.done::after{transform:translateY(100%)}
+.pre-in{position:relative;z-index:2;display:grid;justify-items:center;gap:22px;transition:opacity .5s,transform 1s var(--ease)}
+.pre.done .pre-in{opacity:0;transform:scale(.96)}
+.pre-bar{width:180px;height:1px;background:var(--line);overflow:hidden}
+.pre-bar i{display:block;height:100%;background:#fff;width:0}
+.pre-num{color:var(--mute)}
+
+/* logo recriada */
+.logo{display:inline-grid;grid-template-columns:auto;line-height:.82;position:relative;color:#fff}
+.logo .r{font-weight:400;font-size:.46em;letter-spacing:-.01em;font-variation-settings:"wdth" 100;margin-bottom:.06em}
+.logo .p{font-weight:900;font-size:1em;letter-spacing:-.04em;font-variation-settings:"wdth" 112}
+.logo .ph{position:absolute;right:-.04em;top:-.2em;width:.52em;height:.86em;border:.045em solid currentColor;border-radius:.09em;border-bottom:0;-webkit-mask:linear-gradient(#000 70%,transparent);mask:linear-gradient(#000 70%,transparent)}
+.logo .ph::before{content:"";position:absolute;left:50%;top:.06em;width:.14em;height:.04em;border-radius:1em;background:currentColor;transform:translateX(-50%)}
+.logo .s{display:flex;align-items:center;gap:.3em;font-family:var(--mono);font-size:.11em;letter-spacing:.18em;margin-top:.45em;white-space:nowrap}
+.logo .s::before,.logo .s::after{content:"";height:1px;flex:1;background:currentColor;opacity:.6;min-width:.6em}
+
+/* navegação */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut);transition:background .4s,backdrop-filter .4s,padding .4s}
+.nav.solid{background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.nav .logo{font-size:34px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a:not(.btn){font-size:13px;color:#cfcfcc;position:relative;letter-spacing:.01em}
+.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav-links a:not(.btn):hover::after{transform:scaleX(1);transform-origin:left}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:none;color:#fff;cursor:pointer;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1.5px;background:#fff;transition:transform .4s var(--ease)}
+.burger i:first-child{top:18px}.burger i:last-child{top:25px}
+.menu-open .burger i:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-open .burger i:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:45;background:#000;display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut);gap:6px;clip-path:inset(0 0 100% 0);transition:clip-path .8s var(--ease)}
+.menu-open .mmenu{clip-path:inset(0 0 0 0)}
+.mmenu a{font-size:clamp(40px,12vw,64px);font-weight:800;font-variation-settings:"wdth" 75;letter-spacing:-.02em;line-height:1.05;text-transform:uppercase}
+.mmenu .mono{margin-top:28px;color:var(--mute)}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:12px;height:54px;padding:0 26px;border-radius:100px;font-size:14px;font-weight:600;letter-spacing:.01em;white-space:nowrap;transition:background .35s,color .35s,border-color .35s;will-change:transform;position:relative;overflow:hidden;isolation:isolate}
+.btn-w{background:#fff;color:#000}
+.btn-w::before{content:"";position:absolute;inset:0;background:#000;border-radius:inherit;transform:translateY(101%);transition:transform .55s var(--ease);z-index:-1}
+.btn-w:hover{color:#fff}.btn-w:hover::before{transform:none}
+.btn-w:hover{box-shadow:inset 0 0 0 1px #fff}
+.btn-g{border:1px solid rgba(255,255,255,.35);color:#fff}
+.btn-g:hover{background:#fff;color:#000}
+.btn-sm{height:42px;padding:0 18px;font-size:13px}
+.btn .arr{display:inline-block;transition:transform .5s var(--ease)}
+.btn:hover .arr{transform:translateX(4px) rotate(-45deg)}
+.wa{width:18px;height:18px;flex:none}
+
+/* HERO */
+.hero{position:relative;height:190vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.media{position:absolute;inset:0;background:#000;will-change:clip-path}
+.media video,.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.media video{transform:scale(calc(1.06 - var(--p,0)*.06))}
+.media::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 80% at 50% 40%,transparent 35%,rgba(0,0,0,.75) 100%),
+  linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.15) 55%,transparent 100%),
+  linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 35%)}
+.hero-c{position:absolute;left:var(--gut);right:var(--gut);bottom:clamp(90px,14vh,150px);max-width:1100px;z-index:3}
+.eyebrow{display:flex;align-items:center;gap:10px;color:#d6d6d3;margin-bottom:26px}
+.eyebrow b{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+h1{font-size:clamp(44px,min(8.2vw,12.5vh),138px);font-weight:800;font-variation-settings:"wdth" 72;line-height:.9;letter-spacing:-.025em;text-transform:uppercase}
+.ln{display:block;overflow:hidden;padding-bottom:.04em}
+.ln>span{display:block;transform:translateY(110%);transition:transform 1.3s var(--ease)}
+.ready .ln>span{transform:none}
+.ready .ln:nth-child(2)>span{transition-delay:.09s}
+.ready .ln:nth-child(3)>span{transition-delay:.18s}
+.out,h2 em{color:transparent;background:linear-gradient(180deg,#fff 10%,#77777a 95%);-webkit-background-clip:text;background-clip:text;padding-bottom:.06em}
+.lead{max-width:520px;margin-top:28px;font-size:clamp(16px,1.35vw,19px);color:#c9c9c6;line-height:1.55}
+.ctas{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.ready .fade-up{opacity:1;transform:none}
+.ready .d1{transition-delay:.45s}.ready .d2{transition-delay:.6s}.ready .d3{transition-delay:.75s}
+.hud{position:absolute;inset:0;z-index:2;pointer-events:none;color:rgba(255,255,255,.6)}
+.hud .c{position:absolute;width:22px;height:22px;border-color:rgba(255,255,255,.5);border-style:solid;border-width:0}
+.hud .tl{top:96px;left:var(--gut);border-top-width:1px;border-left-width:1px}
+.hud .tr{top:96px;right:var(--gut);border-top-width:1px;border-right-width:1px}
+.hud .bl{bottom:28px;left:var(--gut);border-bottom-width:1px;border-left-width:1px}
+.hud .br{bottom:28px;right:var(--gut);border-bottom-width:1px;border-right-width:1px}
+.hud .t1{position:absolute;top:104px;right:calc(var(--gut) + 34px);text-align:right;line-height:1.9}
+.hud .t2{position:absolute;bottom:34px;right:calc(var(--gut) + 34px);display:flex;gap:24px}
+.rec{display:inline-flex;align-items:center;gap:8px}.rec::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.scrollcue{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:3;display:grid;justify-items:center;gap:10px;color:rgba(255,255,255,.6)}
+.scrollcue i{width:1px;height:46px;background:linear-gradient(#fff,transparent);transform-origin:top;animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-2{position:absolute;inset:0;z-index:4;display:grid;place-items:center;text-align:center;padding:0 var(--gut);pointer-events:none;opacity:0}
+.hero-2 p{font-size:clamp(30px,5.4vw,84px);font-weight:300;font-variation-settings:"wdth" 90;letter-spacing:-.03em;line-height:1.02}
+.hero-2 p strong{font-weight:800}
+.hero-2 .mono{display:block;margin-top:24px;color:var(--mute)}
+
+/* marquee */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:26px 0;position:relative;z-index:2;background:#000}
+.marq-t{display:flex;gap:60px;width:max-content;animation:marq 38s linear infinite}
+.marq span{font-size:clamp(30px,4.4vw,64px);font-weight:800;font-variation-settings:"wdth" 70;text-transform:uppercase;letter-spacing:-.01em;display:flex;align-items:center;gap:60px;white-space:nowrap}
+.marq span:nth-child(even){color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.55)}
+.marq span::after{content:"";width:12px;height:12px;border:1px solid rgba(255,255,255,.5);transform:rotate(45deg)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* seções */
+section{position:relative}
+.wrap{padding:0 var(--gut);max-width:1480px;margin:0 auto}
+.tag{display:flex;align-items:center;gap:14px;color:var(--mute);margin-bottom:28px}
+.tag::before{content:"";width:28px;height:1px;background:currentColor}
+h2{font-size:clamp(38px,6vw,96px);font-weight:800;font-variation-settings:"wdth" 72;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
+h2 em{font-style:normal}
+[data-r]{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+
+/* manifesto */
+.mani{padding:clamp(120px,18vw,240px) 0 clamp(90px,12vw,170px)}
+.mani p.big{font-size:clamp(28px,4.3vw,66px);font-weight:500;font-variation-settings:"wdth" 88;line-height:1.08;letter-spacing:-.025em;max-width:1300px}
+.mani .w{color:#2a2a29;transition:color .5s}
+.mani .w.on{color:#fff}
+.mani-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-top:70px;flex-wrap:wrap;color:var(--mute)}
+.mani-foot p{max-width:420px;font-size:15px}
+
+/* placa + lupa */
+.lab{padding:clamp(60px,8vw,120px) 0 clamp(100px,12vw,180px)}
+.lab-g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,90px);align-items:center}
+.lab-txt p{color:#bdbdba;font-size:17px;max-width:440px;margin-top:28px}
+.readout{margin-top:40px;border:1px solid var(--line);border-radius:14px;padding:20px 22px;max-width:440px;background:linear-gradient(180deg,#0b0b0b,#050505)}
+.readout .row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+.readout .row:last-child{border:0}
+.readout .k{color:var(--mute)}
+.readout .v{color:#fff;text-align:right}
+#roName{font-size:28px;font-weight:800;font-variation-settings:"wdth" 75;letter-spacing:0;text-transform:uppercase;margin:4px 0 10px;display:block;font-family:var(--wide)}
+.pcb{position:relative;aspect-ratio:800/560;width:100%;border-radius:22px;overflow:hidden;background:radial-gradient(90% 90% at 50% 50%,#0d0d0d,#030303);border:1px solid var(--line);cursor:none;touch-action:pan-y}
+.pcb svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pcb .zoom{position:absolute;inset:0;clip-path:circle(0 at 50% 50%);background:#060606}
+.pcb .zoom-i{position:absolute;inset:0;transform:scale(3.2)}
+.lens{position:absolute;left:0;top:0;width:180px;height:180px;margin:-90px 0 0 -90px;border-radius:50%;border:1px solid rgba(255,255,255,.7);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.6),0 30px 80px rgba(0,0,0,.6),inset 0 0 40px rgba(255,255,255,.06)}
+.lens::before,.lens::after{content:"";position:absolute;background:rgba(255,255,255,.45)}
+.lens::before{left:50%;top:10px;bottom:10px;width:1px;-webkit-mask:linear-gradient(#000 30%,transparent 30% 70%,#000 70%);mask:linear-gradient(#000 30%,transparent 30% 70%,#000 70%)}
+.lens::after{top:50%;left:10px;right:10px;height:1px;-webkit-mask:linear-gradient(90deg,#000 30%,transparent 30% 70%,#000 70%);mask:linear-gradient(90deg,#000 30%,transparent 30% 70%,#000 70%)}
+.lens b{position:absolute;left:50%;top:calc(100% + 10px);transform:translateX(-50%);font:500 10px var(--mono);letter-spacing:.14em;color:#fff;white-space:nowrap}
+.pcb-cap{display:flex;justify-content:space-between;margin-top:16px;color:var(--mute)}
+
+/* serviços */
+.svc{padding:clamp(80px,10vw,150px) 0}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:70px}
+.svc-head p{max-width:380px;color:#bdbdba}
+.rows{border-top:1px solid var(--line)}
+.rowi{display:grid;grid-template-columns:90px minmax(0,1.1fr) minmax(0,1fr) 60px;gap:24px;align-items:center;padding:34px 20px;border-bottom:1px solid var(--line);position:relative;isolation:isolate;transition:color .45s}
+.rowi::before{content:"";position:absolute;inset:0;background:#fff;transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease);z-index:-1}
+.rowi .n{color:var(--mute);transition:color .45s}
+.rowi h3{font-size:clamp(26px,3.2vw,46px);font-weight:800;font-variation-settings:"wdth" 75;text-transform:uppercase;letter-spacing:-.01em;line-height:1}
+.rowi p{color:#a9a9a6;font-size:15px;transition:color .45s}
+.rowi .go{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .6s var(--ease),border-color .45s,background .45s;justify-self:end}
+@media (hover:hover){
+  .rowi:hover{color:#000}
+  .rowi:hover::before{transform:scaleY(1);transform-origin:top}
+  .rowi:hover .n,.rowi:hover p{color:#333}
+  .rowi:hover .go{transform:rotate(-45deg);border-color:#000;background:#000;color:#fff}
+}
+
+/* casos (rolagem horizontal) */
+.cases{background:#000}
+.cases-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.cases-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;padding:0 var(--gut);margin-bottom:44px}
+.cases-top .cnt{color:var(--mute);white-space:nowrap}
+.track{display:flex;gap:22px;padding:0 var(--gut);width:max-content;will-change:transform}
+.case{width:min(440px,82vw);flex:none;border:1px solid var(--line);border-radius:22px;padding:28px;background:linear-gradient(160deg,#111 0%,#050505 60%);display:flex;flex-direction:column;min-height:min(520px,64vh);position:relative;overflow:hidden;transition:border-color .4s}
+.case:hover{border-color:rgba(255,255,255,.35)}
+.case .hd{display:flex;justify-content:space-between;color:var(--mute)}
+.case .ok{color:#fff;display:inline-flex;gap:8px;align-items:center}
+.case .ok::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff}
+.case .model{font-size:clamp(34px,3.6vw,52px);font-weight:800;font-variation-settings:"wdth" 68;text-transform:uppercase;line-height:.92;margin:auto 0 26px;padding-top:40px;letter-spacing:-.01em}
+.case .model small{display:block;font:500 11px var(--mono);letter-spacing:.14em;color:var(--mute);margin-bottom:12px}
+.case dl{display:grid;gap:14px;border-top:1px solid var(--line);padding-top:20px}
+.case dt{font:500 10px var(--mono);letter-spacing:.16em;color:var(--mute);text-transform:uppercase;margin-bottom:3px}
+.case dd{font-size:15px;color:#e2e2df;line-height:1.45}
+.case .glyph{position:absolute;right:-30px;top:40px;width:220px;height:220px;opacity:.13}
+.case.end{background:#fff;color:#000;justify-content:space-between}
+.case.end .model{margin:0}
+.case.end p{color:#333}
+.case.end .btn-w{background:#000;color:#fff}
+.case.end .btn-w::before{background:#fff}.case.end .btn-w:hover{color:#000;box-shadow:inset 0 0 0 1px #000}
+.prog{height:1px;background:var(--line);margin:44px var(--gut) 0;position:relative}
+.prog i{position:absolute;left:0;top:0;bottom:0;background:#fff;width:0}
+
+/* delivery */
+.deliv{padding:clamp(100px,12vw,180px) 0}
+.deliv-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(30px,6vw,100px);align-items:center}
+.ph-frame{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:#050505;border:1px solid var(--line)}
+.ph-frame img{width:100%;height:118%;object-fit:cover;object-position:52% 30%;transform:translateY(var(--py,0))}
+.ph-frame .badge{position:absolute;left:20px;bottom:20px;right:20px;display:flex;justify-content:space-between;color:#fff;padding:14px 18px;border-radius:14px;background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14)}
+.feat{margin-top:44px;display:grid;gap:0;border-top:1px solid var(--line)}
+.feat li{list-style:none;display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.feat svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.4;margin-top:2px}
+.feat b{display:block;font-size:18px;font-weight:700;font-variation-settings:"wdth" 90;margin-bottom:4px}
+.feat span{color:#a9a9a6;font-size:15px}
+
+/* processo */
+.proc{padding:clamp(80px,10vw,150px) 0;border-top:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin-top:80px;counter-reset:s}
+.step{padding:30px 26px 10px 0;border-top:1px solid var(--line);position:relative}
+.step::before{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:#fff}
+.step .mono{color:var(--mute)}
+.step h4{font-size:24px;font-weight:800;font-variation-settings:"wdth" 78;text-transform:uppercase;margin:16px 0 10px;line-height:1}
+.step p{color:#a9a9a6;font-size:14.5px}
+.steps .bar{grid-column:1/-1;height:1px;background:#fff;transform-origin:left;transform:scaleX(0);transition:transform 2.2s var(--ease);margin-top:-1px}
+.steps.in .bar{transform:scaleX(1)}
+
+/* lojistas (inversão) */
+.b2b{background:#f4f4f2;color:#000;padding:clamp(100px,12vw,180px) 0;overflow:hidden}
+.b2b .tag{color:#666}
+.b2b h2 em{background-image:linear-gradient(180deg,#000 10%,#8a8a88 95%)}
+.b2b-g{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(30px,6vw,100px);align-items:end}
+.b2b p.l{font-size:clamp(17px,1.4vw,20px);color:#333;max-width:520px;margin-top:30px}
+.b2b ul{list-style:none;border-top:1px solid rgba(0,0,0,.15)}
+.b2b li{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.15);font-weight:600;font-size:17px}
+.b2b li span{font:500 11px var(--mono);letter-spacing:.14em;color:#777;align-self:center}
+.b2b .btn-w{background:#000;color:#fff;margin-top:36px}
+.b2b .btn-w::before{background:#fff}.b2b .btn-w:hover{color:#000;box-shadow:inset 0 0 0 1px #000}
+.b2b .huge{font-size:clamp(90px,19vw,320px);font-weight:900;font-variation-settings:"wdth" 62;line-height:.8;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;margin-top:clamp(60px,8vw,110px);transform:translateX(var(--hx,0));color:transparent;-webkit-text-stroke:1.5px #000}
+
+/* FAQ */
+.faq{padding:clamp(90px,11vw,160px) 0}
+.faq-g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,6vw,100px)}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:clamp(18px,1.6vw,22px);font-weight:600;font-variation-settings:"wdth" 92}
+summary::-webkit-details-marker{display:none}
+summary i{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;flex:none;position:relative;transition:transform .5s var(--ease),background .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:#fff;transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .5s var(--ease)}
+details[open] summary i{transform:rotate(180deg)}
+details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+details p{color:#a9a9a6;padding:0 60px 28px 0;max-width:680px}
+
+/* CTA final */
+.fin{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:120px var(--gut)}
+.fin-bg{position:absolute;inset:0}
+.fin-bg img{width:100%;height:100%;object-fit:cover;opacity:.55;transform:scale(var(--fs,1.15))}
+.fin-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 50% 50%,rgba(0,0,0,.25),#000 85%)}
+.fin-c{position:relative;z-index:2}
+.fin h2{font-size:clamp(60px,13vw,220px);line-height:.84}
+.fin p{color:#c9c9c6;max-width:520px;margin:30px auto 40px;font-size:18px}
+.fin .ctas{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:60px var(--gut) 40px}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;max-width:1480px;margin:0 auto}
+.ft .logo{font-size:52px}
+.ft h5{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:16px;font-weight:500}
+.ft>div>a,.ft>div>span:not(.logo){display:block;color:#d5d5d2;font-size:15px;margin-bottom:8px}
+.ft a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.fb{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;max-width:1480px;margin:60px auto 0;color:var(--dim)}
+
+/* WhatsApp flutuante */
+.fab{position:fixed;right:20px;bottom:20px;z-index:40;width:60px;height:60px;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,0,0,.5);transform:scale(0);transition:transform .6s var(--ease)}
+.fab.show{transform:scale(1)}
+.fab svg{width:28px;height:28px}
+
+/* cursor */
+.cur,.cur-r{position:fixed;left:0;top:0;pointer-events:none;z-index:95;border-radius:50%;mix-blend-mode:difference}
+.cur{width:6px;height:6px;margin:-3px 0 0 -3px;background:#fff}
+.cur-r{width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid #fff;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,opacity .3s}
+.cur-r.big{width:76px;height:76px;margin:-38px 0 0 -38px;background:#fff}
+.cur-r.hide,.cur.hide{opacity:0}
+@media (hover:none),(pointer:coarse){.cur,.cur-r{display:none}.pcb{cursor:auto}}
+
+@media (max-width:1100px){
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+  .steps .bar{display:none}
+  .ft{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .nav-links{display:none}.burger{display:block}
+  .lab-g,.deliv-g,.b2b-g,.faq-g{grid-template-columns:minmax(0,1fr)}
+  .rowi{grid-template-columns:44px minmax(0,1fr) 44px;padding:26px 0}
+  .rowi p{grid-column:2/3}
+  .rowi .go{grid-row:1;grid-column:3;width:42px;height:42px}
+  .cases-pin{position:relative;height:auto;padding:100px 0}
+  .track{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:6px}
+  .track::-webkit-scrollbar{display:none}
+  .case{scroll-snap-align:center}
+  .prog{display:none}
+  .hud .t1,.hud .tl,.hud .tr{display:none}
+  .hero-c{bottom:96px}
+}
+@media (max-width:600px){
+  .nav .logo{font-size:28px}
+  .nav .btn-sm{display:none}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .hud .t2{display:none}
+  .ctas .btn{flex:1 1 100%;justify-content:center}
+  .ft{grid-template-columns:1fr}
+  details p{padding-right:0}
+  .scrollcue{display:none}
+  .readout{max-width:none}
+  .lens{width:130px;height:130px;margin:-65px 0 0 -65px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .ln>span,.fade-up,[data-r]{transform:none!important;opacity:1!important}
+}
+</style>
+</head>
+<body class="loading">
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cur" aria-hidden="true"></div><div class="cur-r" aria-hidden="true"></div>
+
+<div class="pre" id="pre" aria-hidden="true">
+  <div class="pre-in">
+    <span class="logo" style="font-size:64px"><span class="r">Repara</span><span class="p">PRO</span><i class="ph"></i><span class="s">ASSISTÊNCIA TÉCNICA</span></span>
+    <div class="pre-bar"><i id="preBar"></i></div>
+    <span class="mono pre-num" id="preNum">Calibrando bancada 000</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <a href="#topo" class="logo" aria-label="Repara PRO, início"><span class="r">Repara</span><span class="p">PRO</span><i class="ph"></i><span class="s">ASSISTÊNCIA TÉCNICA</span></a>
+  <nav class="nav-links">
+    <a href="#servicos">Serviços</a>
+    <a href="#casos">Casos</a>
+    <a href="#delivery">Delivery</a>
+    <a href="#lojistas">Lojistas</a>
+    <a href="#duvidas">Dúvidas</a>
+    <a class="btn btn-w btn-sm magnetic" href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener">Orçamento <span class="arr">→</span></a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menu"><i></i><i></i></button>
+</header>
+<div class="mmenu" id="mmenu">
+  <a href="#servicos">Serviços</a><a href="#casos">Casos</a><a href="#delivery">Delivery</a><a href="#lojistas">Lojistas</a><a href="#duvidas">Dúvidas</a>
+  <a class="btn btn-w" style="margin-top:30px;align-self:flex-start;font-size:15px;text-transform:none;font-weight:600;letter-spacing:0" href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener">Chamar no WhatsApp <span class="arr">→</span></a>
+  <span class="mono">Umuarama · PR</span>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="stage" id="stage">
+    <div class="media" id="media">
+      <img src="assets/video/poster.jpg" alt="" id="heroPoster">
+      <video id="heroVideo" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
+    </div>
+    <div class="hud" aria-hidden="true">
+      <span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+      <div class="t1 mono">Lab 01 · Umuarama PR<br>23°45′57″S 53°19′31″W<br>Ampliação 45×</div>
+      <div class="t2 mono"><span class="rec">Ao vivo</span><span id="tc">TC 00:00:00:00</span></div>
+    </div>
+    <div class="hero-c" id="heroC">
+      <p class="eyebrow mono fade-up"><b></b>Microrreparo · Placa · Tela · Bateria</p>
+      <h1><span class="ln"><span>Onde outros</span></span><span class="ln"><span>condenam a placa,</span></span><span class="ln"><span class="out">nós começamos.</span></span></h1>
+      <p class="lead fade-up d1">Laboratório de reparo de smartphones em Umuarama. Diagnóstico de verdade, no nível do componente, para recuperar o seu aparelho sempre que for possível.</p>
+      <div class="ctas fade-up d2">
+        <a class="btn btn-w magnetic" href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener"><svg class="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>Orçamento no WhatsApp</a>
+        <a class="btn btn-g magnetic" href="#servicos">Ver o que reparamos <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="hero-2" id="hero2"><div><p>Tecnologia, <strong>precisão</strong><br>e confiança.</p><span class="mono">Garantia · Atendimento ágil · Busca e entrega</span></div></div>
+    <div class="scrollcue mono" id="cue"><span>Role</span><i></i></div>
+  </div>
+</section>
+
+<div class="marq" aria-label="Marcas atendidas">
+  <div class="marq-t">
+    <span>iPhone</span><span>Samsung Galaxy</span><span>Xiaomi</span><span>Redmi</span><span>Poco</span><span>Outras marcas</span>
+    <span>iPhone</span><span>Samsung Galaxy</span><span>Xiaomi</span><span>Redmi</span><span>Poco</span><span>Outras marcas</span>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="mani" id="mani">
+  <div class="wrap">
+    <p class="tag mono" data-r>Manifesto</p>
+    <p class="big" id="maniTxt">Enquanto muitos condenam a placa ou indicam a compra de um aparelho novo, a gente abre, mede e procura a verdadeira causa do problema. Seu aparelho merece uma segunda chance.</p>
+    <div class="mani-foot" data-r>
+      <p>Microrreparo é trabalho de microscópio, estação de solda e paciência. É o que separa trocar peça de consertar de verdade.</p>
+      <span class="mono">Repara PRO · Especialista em microrreparos</span>
+    </div>
+  </div>
+</section>
+
+<!-- PLACA + LUPA -->
+<section class="lab" id="lab">
+  <div class="wrap lab-g">
+    <div class="lab-txt" data-r>
+      <p class="tag mono">Nível de componente</p>
+      <h2>Trabalhamos<br>onde o olho<br><em>não alcança.</em></h2>
+      <p>Passe a lente sobre a placa. Cada bloco que você vê é um ponto onde a gente atua: processador, energia, memória, Wi-Fi, áudio e conectores.</p>
+      <div class="readout mono" aria-live="polite">
+        <span class="k">Componente em foco</span>
+        <span id="roName">Varredura</span>
+        <div class="row"><span class="k">Reparo</span><span class="v" id="roSvc">Passe a lente na placa</span></div>
+        <div class="row"><span class="k">Sintoma comum</span><span class="v" id="roSym">—</span></div>
+        <div class="row"><span class="k">Coord.</span><span class="v" id="roXY">000 · 000</span></div>
+      </div>
+    </div>
+    <div data-r>
+      <div class="pcb" id="pcb" role="img" aria-label="Ilustração de uma placa de celular com lente de aumento interativa">
+        <svg id="pcbBase" viewBox="0 0 800 560" preserveAspectRatio="xMidYMid meet"></svg>
+        <div class="zoom" id="zoom"><div class="zoom-i" id="zoomI"><svg id="pcbZoom" viewBox="0 0 800 560" preserveAspectRatio="xMidYMid meet"></svg></div></div>
+        <div class="lens" id="lens"><b id="lensTxt">3,2×</b></div>
+      </div>
+      <div class="pcb-cap mono"><span>Placa lógica · ilustração</span><span>Lente 3,2×</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="svc" id="servicos">
+  <div class="wrap">
+    <div class="svc-head">
+      <div data-r><p class="tag mono">Serviços</p><h2>O que sai<br><em>da bancada.</em></h2></div>
+      <p data-r>Do reparo mais delicado na placa à troca de tela. Tudo com diagnóstico antes, orçamento claro e garantia depois.</p>
+    </div>
+    <div class="rows">
+      <a class="rowi" data-r href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener"><span class="n mono">01</span><h3>Reparo em placa</h3><p>Aparelho que não liga, reinicia ou esquenta. Swap de componentes, troca de CPU e PMU, reparo de malha de alimentação e FPC.</p><span class="go">↗</span></a>
+      <a class="rowi" data-r href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener"><span class="n mono">02</span><h3>Troca de tela</h3><p>Display novo com acabamento de fábrica. Em iPhone, sem a mensagem de troca de tela e com True Tone funcionando.</p><span class="go">↗</span></a>
+      <a class="rowi" data-r href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener"><span class="n mono">03</span><h3>Vidro traseiro</h3><p>Traseira trincada no iPhone? Troca do vidro traseiro com o aparelho voltando a ter cara de novo.</p><span class="go">↗</span></a>
+      <a class="rowi" data-r href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener"><span class="n mono">04</span><h3>Bateria</h3><p>Troca de bateria com baterias originais para iPhone, para recuperar autonomia e desempenho.</p><span class="go">↗</span></a>
+      <a class="rowi" data-r href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener"><span class="n mono">05</span><h3>Wi-Fi e sinal</h3><p>Wi-Fi que não liga, não encontra rede ou fica cinza. Reparo na placa, não só configuração.</p><span class="go">↗</span></a>
+      <a class="rowi" data-r href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener"><span class="n mono">06</span><h3>Áudio</h3><p>Microfone, alto-falante e chamadas sem som. Diagnóstico e reparo do setor de áudio na placa.</p><span class="go">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CASOS -->
+<section class="cases" id="casos">
+  <div class="cases-pin" id="casesPin">
+    <div class="cases-top">
+      <div><p class="tag mono">Casos reais da bancada</p><h2>Parece impossível.<br><em>Até chegar aqui.</em></h2></div>
+      <span class="cnt mono" id="cnt">01 / 08</span>
+    </div>
+    <div class="track" id="track">
+      <article class="case"><div class="hd mono"><span>Caso 01</span><span class="ok">Concluído</span></div><svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width=".8"><rect x="20" y="20" width="60" height="60" rx="4"/><rect x="34" y="34" width="32" height="32"/><path d="M20 30H8M20 45H8M20 60H8M80 30h12M80 45h12M80 60h12M30 20V8M50 20V8M70 20V8M30 80v12M50 80v12M70 80v12"/></svg>
+        <div class="model"><small>Apple</small>iPhone 13<br>Pro Max</div>
+        <dl><div><dt>Sintoma</dt><dd>Placa com danos causados por um forte impacto.</dd></div><div><dt>Procedimento</dt><dd>Swap de componentes: transplante dos microcomponentes para recuperar o funcionamento.</dd></div></dl></article>
+      <article class="case"><div class="hd mono"><span>Caso 02</span><span class="ok">Concluído</span></div><svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width=".8"><path d="M10 50h20l6-14 8 28 8-28 8 28 6-14h24"/></svg>
+        <div class="model"><small>Samsung</small>Galaxy<br>Note 20</div>
+        <dl><div><dt>Sintoma</dt><dd>Aparelho não ligava.</dd></div><div><dt>Diagnóstico</dt><dd>FPC danificado em uma das malhas de alimentação.</dd></div><div><dt>Procedimento</dt><dd>Substituição do componente danificado.</dd></div></dl></article>
+      <article class="case"><div class="hd mono"><span>Caso 03</span><span class="ok">Concluído</span></div><svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width=".8"><rect x="14" y="14" width="72" height="72" rx="6" stroke-dasharray="3 3"/><rect x="30" y="30" width="40" height="40"/></svg>
+        <div class="model"><small>Xiaomi</small>Poco M3</div>
+        <dl><div><dt>Sintoma</dt><dd>Não ligava, com defeito de fábrica.</dd></div><div><dt>Procedimento</dt><dd>Remoção da blindagem e reparo direto na placa.</dd></div></dl></article>
+      <article class="case"><div class="hd mono"><span>Caso 04</span><span class="ok">Concluído</span></div><svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width=".8"><path d="M20 44a42 42 0 0 1 60 0M30 56a28 28 0 0 1 40 0M40 68a14 14 0 0 1 20 0"/><circle cx="50" cy="78" r="3"/></svg>
+        <div class="model"><small>Xiaomi</small>Redmi<br>Note 8</div>
+        <dl><div><dt>Sintoma</dt><dd>Sem sinal de Wi-Fi.</dd></div><div><dt>Procedimento</dt><dd>Microrreparo no setor de Wi-Fi da placa.</dd></div></dl></article>
+      <article class="case"><div class="hd mono"><span>Caso 05</span><span class="ok">Concluído</span></div><svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width=".8"><path d="M56 10 30 54h20l-6 36 26-46H50Z"/></svg>
+        <div class="model"><small>Apple</small>iPhone 7</div>
+        <dl><div><dt>Procedimento</dt><dd>Troca do PMU_AP, o circuito que gerencia a energia do aparelho.</dd></div><div><dt>Também</dt><dd>Reparo do setor de áudio da placa.</dd></div></dl></article>
+      <article class="case"><div class="hd mono"><span>Caso 06</span><span class="ok">Concluído</span></div><svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width=".8"><rect x="30" y="16" width="40" height="72" rx="6"/><path d="M42 12h16M38 70h24M38 58h24M38 46h24"/></svg>
+        <div class="model"><small>Apple</small>iPhone 11</div>
+        <dl><div><dt>Procedimento</dt><dd>Troca de bateria.</dd></div><div><dt>Também</dt><dd>Troca de vidro traseiro, feita em iPhone 11 e iPhone X.</dd></div></dl></article>
+      <article class="case"><div class="hd mono"><span>Caso 07</span><span class="ok">Concluído</span></div><svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width=".8"><rect x="22" y="10" width="56" height="80" rx="8"/><circle cx="50" cy="50" r="16"/><path d="M50 26v8M50 66v8M26 50h8M66 50h8"/></svg>
+        <div class="model"><small>Apple</small>Troca de<br>display</div>
+        <dl><div><dt>Resultado</dt><dd>Tela nova sem a mensagem de troca de tela e com True Tone funcionando.</dd></div></dl></article>
+      <article class="case end"><div class="hd mono" style="color:#666"><span>Caso 08</span><span>O seu</span></div>
+        <div><div class="model" style="color:#000">O próximo<br>é o seu.</div><p style="margin-top:18px">Mande o modelo e o defeito. A gente responde com diagnóstico e orçamento.</p></div>
+        <a class="btn btn-w" href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener" style="align-self:flex-start">Chamar no WhatsApp <span class="arr">→</span></a></article>
+    </div>
+    <div class="prog"><i id="progI"></i></div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="deliv" id="delivery">
+  <div class="wrap deliv-g">
+    <div class="ph-frame" data-r id="delivImg"><img src="assets/img/f-22.jpg" alt="Smartphone em close, iluminado sobre fundo preto" loading="lazy"><div class="badge mono"><span>Retirada</span><span>Reparo</span><span>Entrega</span></div></div>
+    <div data-r>
+      <p class="tag mono">Conserto via delivery</p>
+      <h2>A gente<br><em>busca</em> até<br>você.</h2>
+      <p style="color:#bdbdba;margin-top:28px;max-width:460px">Seu celular precisa de reparo, mas a rotina não permite? A Repara PRO busca o aparelho e devolve pronto, com praticidade e segurança.</p>
+      <ul class="feat">
+        <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Retirada no local</b><span>Você agenda, a gente vai até você em Umuarama.</span></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></svg><div><b>Conserto com qualidade</b><span>O mesmo laboratório e o mesmo cuidado de quem leva na loja.</span></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Segurança e confiança</b><span>Aparelho de volta pronto e com garantia do serviço.</span></div></li>
+      </ul>
+      <a class="btn btn-w magnetic" style="margin-top:40px" href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener">Agendar retirada <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="proc">
+  <div class="wrap">
+    <p class="tag mono" data-r>Como funciona</p>
+    <h2 data-r>Do contato<br>à <em>entrega.</em></h2>
+    <div class="steps" id="steps">
+      <div class="step"><span class="mono">Etapa 01</span><h4>Contato</h4><p>Você chama no WhatsApp com o modelo e o que está acontecendo.</p></div>
+      <div class="step"><span class="mono">Etapa 02</span><h4>Retirada</h4><p>Traz até nós ou a gente busca o aparelho até você.</p></div>
+      <div class="step"><span class="mono">Etapa 03</span><h4>Diagnóstico</h4><p>Abrimos, medimos e encontramos a causa. Orçamento antes de qualquer reparo.</p></div>
+      <div class="step"><span class="mono">Etapa 04</span><h4>Reparo</h4><p>Execução na bancada, com microscópio e equipamento adequado.</p></div>
+      <div class="step"><span class="mono">Etapa 05</span><h4>Entrega</h4><p>Aparelho testado, de volta nas suas mãos e com garantia.</p></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOJISTAS -->
+<section class="b2b" id="lojistas">
+  <div class="wrap b2b-g">
+    <div data-r>
+      <p class="tag mono">Para lojistas</p>
+      <h2>Sua bancada<br>de placa,<br><em>terceirizada.</em></h2>
+      <p class="l">Atendemos lojistas de Umuarama e região com reparos avançados em placas. O aparelho que a sua loja não consegue resolver, a gente resolve e você entrega ao seu cliente.</p>
+      <a class="btn btn-w magnetic" href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener">Quero ser parceiro <span class="arr">→</span></a>
+    </div>
+    <ul data-r>
+      <li>Reparo em placa<span>Não liga · curto</span></li>
+      <li>Troca de CPU e PMU<span>Solda BGA</span></li>
+      <li>Swap de componentes<span>Placa com impacto</span></li>
+      <li>Wi-Fi e áudio<span>Setor da placa</span></li>
+      <li>Malha de alimentação<span>FPC</span></li>
+    </ul>
+  </div>
+  <div class="huge" id="huge" aria-hidden="true">Repara PRO · Repara PRO</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="duvidas">
+  <div class="wrap faq-g">
+    <div data-r><p class="tag mono">Dúvidas</p><h2>Antes de<br><em>chamar.</em></h2></div>
+    <div data-r>
+      <details><summary>Meu celular não liga. Tem conserto?<i></i></summary><p>Na maioria das vezes, sim. Aparelho que não liga costuma ter um problema localizado na placa, como um componente ou uma malha de alimentação danificada. O diagnóstico mostra a causa antes de qualquer orçamento.</p></details>
+      <details><summary>Vocês dão garantia?<i></i></summary><p>Sim. Todo serviço sai da bancada com garantia. As condições de cada reparo são passadas junto com o orçamento.</p></details>
+      <details><summary>Vocês buscam o aparelho?<i></i></summary><p>Sim. Agende pelo WhatsApp que a gente busca o seu celular e devolve pronto.</p></details>
+      <details><summary>Quais marcas vocês atendem?<i></i></summary><p>iPhone, Samsung, Xiaomi, Redmi, Poco e outras marcas de smartphone. Mande o modelo no WhatsApp para confirmar.</p></details>
+      <details><summary>Perco meus dados no reparo?<i></i></summary><p>Em reparo de placa o objetivo é justamente recuperar o aparelho funcionando como estava. Se algum procedimento tiver risco para os dados, a gente avisa antes de fazer.</p></details>
+      <details><summary>Atendem outras lojas e técnicos?<i></i></summary><p>Sim. Atendemos lojistas de Umuarama e região com reparos avançados em placas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="fin" id="fin">
+  <div class="fin-bg"><img src="assets/img/f-19.5.jpg" alt="" loading="lazy" id="finImg"></div>
+  <div class="fin-c" data-r>
+    <p class="mono" style="color:var(--mute);margin-bottom:26px">Umuarama · PR</p>
+    <h2>Tem<br><em>conserto.</em></h2>
+    <p>Mande o modelo e o defeito. A resposta vem com diagnóstico e orçamento.</p>
+    <div class="ctas"><a class="btn btn-w magnetic" href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener">Falar com a Repara PRO <span class="arr">→</span></a><a class="btn btn-g magnetic" href="https://www.instagram.com/reparaproassistencia/" target="_blank" rel="noopener">@reparaproassistencia</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft">
+    <div><span class="logo"><span class="r">Repara</span><span class="p">PRO</span><i class="ph"></i><span class="s">ASSISTÊNCIA TÉCNICA</span></span><p style="color:var(--mute);margin-top:24px;max-width:300px;font-size:14px">Tecnologia, precisão e confiança. Reparos avançados em smartphones.</p></div>
+    <div><h5>Serviços</h5><a href="#servicos">Reparo em placa</a><a href="#servicos">Troca de tela</a><a href="#servicos">Vidro traseiro</a><a href="#servicos">Bateria</a></div>
+    <div><h5>Empresa</h5><a href="#casos">Casos</a><a href="#delivery">Delivery</a><a href="#lojistas">Lojistas</a><a href="#duvidas">Dúvidas</a></div>
+    <div><h5>Contato</h5><a href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/reparaproassistencia/" target="_blank" rel="noopener">Instagram</a><span>Umuarama · PR</span></div>
+  </div>
+  <div class="fb mono"><span>© 2026 Repara PRO Assistência Técnica</span><span>Feito na bancada, em Umuarama</span></div>
+</footer>
+
+<a class="fab" id="fab" href="https://wa.me/message/NVWMM2ADBG2UM1" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></a>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+/* vídeo da capa: vertical no celular em pé */
+const v=$('#heroVideo'), poster=$('#heroPoster');
+const portrait=matchMedia('(max-width:760px)').matches && innerHeight>innerWidth;
+if(portrait) poster.src='assets/video/poster-celular.jpg';
+v.poster=poster.src;
+v.src=portrait?'assets/video/capa-celular.mp4':'assets/video/capa-1920.mp4';
+v.addEventListener('playing',()=>{poster.style.opacity=0},{once:true});
+poster.style.transition='opacity .8s';
+const tryPlay=()=>v.play().catch(()=>{});
+tryPlay(); document.addEventListener('touchstart',tryPlay,{once:true,passive:true});
+
+/* preloader */
+const pre=$('#pre'), bar=$('#preBar'), num=$('#preNum');
+let shown=0, target=0, finished=false;
+const t0=performance.now();
+function preTick(){
+  const el=performance.now()-t0;
+  target=Math.max(target,Math.min(92,el/14));
+  if(v.readyState>=3||el>2600) target=100;
+  shown+=(target-shown)*.12;
+  const n=Math.round(shown);
+  bar.style.width=n+'%';
+  num.textContent='Calibrando bancada '+String(n).padStart(3,'0');
+  if(n>=99&&!finished){finished=true;setTimeout(done,180);return}
+  requestAnimationFrame(preTick);
+}
+setTimeout(()=>{if(!finished){finished=true;done()}},3400);
+function done(){if(pre.classList.contains('done'))return;pre.classList.add('done');document.body.classList.remove('loading');document.body.classList.add('ready');setTimeout(()=>pre.remove(),1300)}
+if(reduce){done()}else requestAnimationFrame(preTick);
+
+/* timecode */
+const tc=$('#tc');
+(function tick(){const t=v.currentTime||0,f=Math.floor((t%1)*30);tc.textContent='TC 00:00:'+String(Math.floor(t)).padStart(2,'0')+':'+String(f).padStart(2,'0');requestAnimationFrame(tick)})();
+
+/* menu */
+$('#burger').addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+$$('#mmenu a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('menu-open')));
+
+/* aparecer ao rolar */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+$$('[data-r]').forEach((el,i)=>{el.style.transitionDelay=(el.closest('.rows')?(i%6)*.06:0)+'s';io.observe(el)});
+io.observe($('#steps'));
+
+/* manifesto palavra por palavra */
+const mt=$('#maniTxt');
+mt.innerHTML=mt.textContent.split(' ').map(w=>'<span class="w">'+w+'</span>').join(' ');
+const words=$$('#maniTxt .w');
+
+/* casos: rolagem horizontal presa */
+const cases=$('#casos'), track=$('#track'), progI=$('#progI'), cnt=$('#cnt'), pin=$('#casesPin');
+const desk=()=>innerWidth>900;
+function sizeCases(){
+  if(desk()){cases.style.height=(track.scrollWidth-innerWidth+innerHeight)+'px'}
+  else{cases.style.height='';track.style.transform=''}
+}
+track.addEventListener('scroll',()=>{if(!desk()){const p=track.scrollLeft/(track.scrollWidth-track.clientWidth||1);cnt.textContent=String(1+Math.round(p*7)).padStart(2,'0')+' / 08'}},{passive:true});
+
+/* rolagem: capa, casos, parallax */
+const stage=$('#stage'), media=$('#media'), heroC=$('#heroC'), hero2=$('#hero2'), cue=$('#cue'), hero=$('#topo'), nav=$('#nav'), fab=$('#fab');
+const huge=$('#huge'), b2b=$('#lojistas'), fin=$('#fin'), delivImg=$('#delivImg img'), mani=$('#mani');
+function onScroll(){
+  const y=scrollY, H=innerHeight;
+  const hp=clamp(y/(hero.offsetHeight-H),0,1);
+  if(!reduce){
+    const e=hp*hp*(3-2*hp);
+    media.style.clipPath=`inset(${e*9}vh ${e*7}vw ${e*9}vh ${e*7}vw round ${e*34}px)`;
+    media.style.setProperty('--p',e);
+    heroC.style.transform=`translateY(${-hp*120}px)`;
+    heroC.style.opacity=clamp(1-hp*2.2,0,1);
+    hero2.style.opacity=clamp((hp-.38)*3.2,0,1)*clamp((1-hp)*6,0,1);
+    hero2.style.transform=`scale(${.94+hp*.08})`;
+    cue.style.opacity=clamp(1-hp*5,0,1);
+  }
+  nav.classList.toggle('solid',y>hero.offsetHeight-H*1.05);
+  fab.classList.toggle('show',y>H*.9);
+
+  const mr=mani.getBoundingClientRect();
+  const mp=clamp((H*.85-mr.top)/(mr.height*.75),0,1);
+  const k=Math.round(mp*words.length);
+  words.forEach((w,i)=>w.classList.toggle('on',i<k));
+
+  if(desk()){
+    const r=cases.getBoundingClientRect();
+    const dist=cases.offsetHeight-H;
+    const p=clamp(-r.top/dist,0,1);
+    const maxX=track.scrollWidth-innerWidth;
+    track.style.transform=`translate3d(${-p*maxX}px,0,0)`;
+    progI.style.width=p*100+'%';
+    cnt.textContent=String(1+Math.round(p*7)).padStart(2,'0')+' / 08';
+  }
+  const br=b2b.getBoundingClientRect();
+  huge.style.setProperty('--hx',(-(H-br.top)*.25)+'px');
+  const dr=delivImg.parentElement.getBoundingClientRect();
+  delivImg.style.setProperty('--py',(clamp((H-dr.top)/(H+dr.height),0,1)*-14)+'%');
+  const fr=fin.getBoundingClientRect();
+  $('#finImg').style.setProperty('--fs',1.15-clamp((H-fr.top)/(H+fr.height),0,1)*.15);
+}
+let ticking=false;
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{onScroll();ticking=false})}},{passive:true});
+addEventListener('resize',()=>{sizeCases();onScroll()});
+addEventListener('load',()=>{sizeCases();onScroll()});
+sizeCases();onScroll();
+
+/* âncoras suaves */
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(!t)return;e.preventDefault();scrollTo({top:a.getAttribute('href')==='#topo'?0:t.getBoundingClientRect().top+scrollY-(a.getAttribute('href')==='#casos'?0:70),behavior:reduce?'auto':'smooth'})}));
+
+/* cursor + botões magnéticos */
+if(fine&&!reduce){
+  const c=$('.cur'), cr=$('.cur-r');let mx=-100,my=-100,rx=-100,ry=-100;
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.transform=`translate(${mx}px,${my}px)`});
+  (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;cr.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
+  $$('a,button,summary').forEach(el=>{el.addEventListener('mouseenter',()=>cr.classList.add('big'));el.addEventListener('mouseleave',()=>cr.classList.remove('big'))});
+  const pcb=$('#pcb');
+  pcb.addEventListener('mouseenter',()=>{c.classList.add('hide');cr.classList.add('hide')});
+  pcb.addEventListener('mouseleave',()=>{c.classList.remove('hide');cr.classList.remove('hide')});
+  $$('.magnetic').forEach(b=>{
+    b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.22}px,${(e.clientY-r.top-r.height/2)*.3}px)`});
+    b.addEventListener('mouseleave',()=>{b.style.transition='transform .6s cubic-bezier(.16,1,.3,1),background .35s,color .35s';b.style.transform='';setTimeout(()=>b.style.transition='',600)});
+  });
+}
+
+/* placa lógica gerada + lente */
+const W=800,H=560;let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+const chips=[
+  {x:300,y:190,w:150,h:150,l:'CPU',id:'U1000',svc:'Troca e reballing',sym:'Não liga · reinicia'},
+  {x:490,y:205,w:96,h:96,l:'NAND',id:'U1700',svc:'Memória',sym:'Trava na logo'},
+  {x:120,y:110,w:118,h:86,l:'PMU',id:'U2301',svc:'Gerenciamento de energia',sym:'Não liga · esquenta'},
+  {x:560,y:370,w:92,h:66,l:'Wi-Fi',id:'U5200',svc:'Setor de Wi-Fi',sym:'Wi-Fi cinza · sem rede'},
+  {x:130,y:360,w:84,h:70,l:'Áudio',id:'U3101',svc:'Setor de áudio',sym:'Sem som · microfone'},
+  {x:630,y:96,w:104,h:54,l:'FPC',id:'J4200',svc:'Conector e malha',sym:'Tela ou carga falhando'},
+  {x:330,y:410,w:132,h:60,l:'Carga',id:'U3300',svc:'Circuito de carga',sym:'Não carrega'}
+];
+const inChip=(x,y,m=10)=>chips.some(c=>x>c.x-m&&x<c.x+c.w+m&&y>c.y-m&&y<c.y+c.h+m);
+let s='';
+s+=`<defs><linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#151515"/><stop offset="1" stop-color="#080808"/></linearGradient></defs>`;
+s+=`<path d="M60 40H700a40 40 0 0 1 40 40V250h-24v60h24V480a40 40 0 0 1-40 40H100a40 40 0 0 1-40-40V40Z" fill="url(#bd)" stroke="rgba(255,255,255,.35)" stroke-width="1"/>`;
+// grade fina de cobre
+for(let x=80;x<740;x+=20)s+=`<line x1="${x}" y1="50" x2="${x}" y2="510" stroke="rgba(255,255,255,.025)" stroke-width=".5"/>`;
+// barramentos entre chips
+const centre=c=>[c.x+c.w/2,c.y+c.h/2];
+const pairs=[[0,1],[0,2],[0,3],[0,4],[0,6],[1,5],[2,4],[3,6],[1,3],[2,5]];
+pairs.forEach(([a,b],pi)=>{
+  const [x1,y1]=centre(chips[a]),[x2,y2]=centre(chips[b]);
+  const n=4+Math.floor(rnd()*5);
+  for(let k=0;k<n;k++){
+    const o=(k-n/2)*5;
+    const dx=x2-x1,dy=y2-y1;
+    let d;
+    if(Math.abs(dx)>Math.abs(dy)){const sx=Math.sign(dx);d=`M${x1} ${y1+o}H${x2-sx*Math.abs(dy)}L${x2} ${y2+o}`}
+    else{const sy=Math.sign(dy);d=`M${x1+o} ${y1}V${y2-sy*Math.abs(dx)}L${x2+o} ${y2}`}
+    s+=`<path d="${d}" fill="none" stroke="rgba(255,255,255,${.1+rnd()*.14})" stroke-width=".9"/>`;
+  }
+});
+// trilhas soltas com via
+for(let i=0;i<120;i++){
+  let x=80+rnd()*640,y=60+rnd()*440;if(inChip(x,y,4))continue;
+  let d=`M${x.toFixed(1)} ${y.toFixed(1)}`;const segs=2+Math.floor(rnd()*3);
+  let dir=Math.floor(rnd()*4);
+  for(let k=0;k<segs;k++){const L=10+rnd()*50;const a=[[1,0],[0,1],[-1,0],[0,-1]][dir];x+=a[0]*L;y+=a[1]*L;
+    if(rnd()<.5){const L2=6+rnd()*14;const sgn=rnd()<.5?1:-1;x+=(a[0]?a[0]:sgn)*L2;y+=(a[1]?a[1]:sgn)*L2}
+    d+=` L${x.toFixed(1)} ${y.toFixed(1)}`;dir=(dir+(rnd()<.5?1:3))%4}
+  if(x<70||x>735||y<48||y>515)continue;
+  s+=`<path d="${d}" fill="none" stroke="rgba(255,255,255,.13)" stroke-width=".7"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="1.8" fill="#080808" stroke="rgba(255,255,255,.4)" stroke-width=".6"/>`;
+}
+// componentes SMD minúsculos
+for(let i=0;i<520;i++){
+  const x=78+rnd()*650,y=56+rnd()*450;if(inChip(x,y,6))continue;
+  const hz=rnd()<.5,w=hz?5.5:2.6,h=hz?2.6:5.5;
+  const dark=rnd()<.55;
+  s+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w}" height="${h}" fill="${dark?'#1d1d1d':'#3a3a3a'}" stroke="rgba(255,255,255,.35)" stroke-width=".25"/>`;
+  if(hz)s+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="1.2" height="${h}" fill="rgba(255,255,255,.7)"/><rect x="${(x+w-1.2).toFixed(1)}" y="${y.toFixed(1)}" width="1.2" height="${h}" fill="rgba(255,255,255,.7)"/>`;
+  else s+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w}" height="1.2" fill="rgba(255,255,255,.7)"/><rect x="${x.toFixed(1)}" y="${(y+h-1.2).toFixed(1)}" width="${w}" height="1.2" fill="rgba(255,255,255,.7)"/>`;
+}
+// chips
+chips.forEach(c=>{
+  for(let px=c.x+6;px<c.x+c.w-4;px+=6){s+=`<rect x="${px}" y="${c.y-4}" width="2.4" height="4" fill="rgba(255,255,255,.55)"/><rect x="${px}" y="${c.y+c.h}" width="2.4" height="4" fill="rgba(255,255,255,.55)"/>`}
+  for(let py=c.y+6;py<c.y+c.h-4;py+=6){s+=`<rect x="${c.x-4}" y="${py}" width="4" height="2.4" fill="rgba(255,255,255,.55)"/><rect x="${c.x+c.w}" y="${py}" width="4" height="2.4" fill="rgba(255,255,255,.55)"/>`}
+  s+=`<rect x="${c.x}" y="${c.y}" width="${c.w}" height="${c.h}" rx="3" fill="#0b0b0b" stroke="rgba(255,255,255,.6)" stroke-width=".8"/>`;
+  s+=`<rect x="${c.x+5}" y="${c.y+5}" width="${c.w-10}" height="${c.h-10}" rx="2" fill="none" stroke="rgba(255,255,255,.12)" stroke-width=".5"/>`;
+  s+=`<circle cx="${c.x+10}" cy="${c.y+10}" r="2" fill="rgba(255,255,255,.5)"/>`;
+  const fs=Math.min(22,c.w/4.2);
+  s+=`<text x="${c.x+c.w/2}" y="${c.y+c.h/2+fs*.15}" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="${fs}" font-weight="500" fill="#fff" letter-spacing="1">${c.l.toUpperCase()}</text>`;
+  s+=`<text x="${c.x+c.w/2}" y="${c.y+c.h/2+fs*.15+11}" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(255,255,255,.5)" letter-spacing=".6">${c.id} · RPR-${(c.w*7+c.h).toString(16).toUpperCase()}</text>`;
+});
+// marcações de serigrafia
+s+=`<text x="80" y="505" font-family="JetBrains Mono,monospace" font-size="7" fill="rgba(255,255,255,.35)" letter-spacing="1.5">REPARA PRO · LOGIC BOARD · REV 2026</text>`;
+[[86,64],[712,64],[86,496],[712,496]].forEach(([x,y])=>s+=`<circle cx="${x}" cy="${y}" r="6" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/><circle cx="${x}" cy="${y}" r="2" fill="rgba(255,255,255,.4)"/>`);
+$('#pcbBase').innerHTML=s; $('#pcbZoom').innerHTML=s;
+
+const pcb=$('#pcb'), zoom=$('#zoom'), zi=$('#zoomI'), lens=$('#lens');
+const roName=$('#roName'), roSvc=$('#roSvc'), roSym=$('#roSym'), roXY=$('#roXY');
+let lx=0,ly=0,tx=0,ty=0,auto=true,lastMove=0,ang=0,active=null;
+function toSvg(x,y){const r=pcb.getBoundingClientRect();const sc=Math.min(r.width/W,r.height/H);const ox=(r.width-W*sc)/2,oy=(r.height-H*sc)/2;return[(x-ox)/sc,(y-oy)/sc]}
+function setLens(x,y){
+  const r=pcb.getBoundingClientRect(), rad=lens.offsetWidth/2;
+  zoom.style.clipPath=`circle(${rad}px at ${x}px ${y}px)`;
+  zi.style.transformOrigin=`${x}px ${y}px`;
+  lens.style.transform=`translate(${x}px,${y}px)`;
+  const [sx,sy]=toSvg(x,y);
+  roXY.textContent=String(Math.round(clamp(sx,0,W))).padStart(3,'0')+' · '+String(Math.round(clamp(sy,0,H))).padStart(3,'0');
+  const c=chips.find(c=>sx>c.x-8&&sx<c.x+c.w+8&&sy>c.y-8&&sy<c.y+c.h+8)||null;
+  if(c!==active){active=c;
+    roName.textContent=c?c.l:'Varredura';
+    roSvc.textContent=c?c.svc:'Componentes SMD';
+    roSym.textContent=c?c.sym:'—';
+    $('#lensTxt').textContent=c?c.l.toUpperCase()+' · 3,2×':'3,2×';
+  }
+}
+function pmove(e){const r=pcb.getBoundingClientRect();tx=e.clientX-r.left;ty=e.clientY-r.top;auto=false;lastMove=performance.now()}
+pcb.addEventListener('pointermove',pmove);
+pcb.addEventListener('pointerdown',pmove);
+pcb.addEventListener('pointerleave',()=>{lastMove=performance.now()-2500});
+let pcbVisible=false;
+new IntersectionObserver(es=>{pcbVisible=es[0].isIntersecting},{threshold:0}).observe(pcb);
+(function lensLoop(){
+  if(pcbVisible){
+    const r=pcb.getBoundingClientRect();
+    if(performance.now()-lastMove>3000)auto=true;
+    if(auto){ang+=reduce?0:.006;
+      // passeia pelos chips em uma órbita suave
+      tx=r.width*(.5+.3*Math.sin(ang*1.3));ty=r.height*(.5+.28*Math.sin(ang*2.1+1))}
+    lx+=(tx-lx)*.12;ly+=(ty-ly)*.12;
+    setLens(lx,ly);
+  }
+  requestAnimationFrame(lensLoop);
+})();
+})();
+</script>
+</body>
+</html>
